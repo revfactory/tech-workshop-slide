@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 개요</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-accent {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            top: 0;
+            left: 0;
+        }
+        .title {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .goal-card {
+            background-color: white;
+            border-left: 5px solid #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .goal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .background-card {
+            background-color: rgba(59, 130, 246, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .icon-bg {
+            background-color: rgba(59, 130, 246, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <div class="header-accent"></div>
+        
+        <!-- 슬라이드 헤더 -->
+        <div class="px-16 pt-10 pb-6">
+            <h1 class="title text-5xl mb-3">AI 코드 생성 도구(Claude)를 활용한<br>웹 서비스 개발 프로젝트</h1>
+            <p class="text-gray-600 text-xl">프로젝트 개요</p>
+        </div>
+        
+        <!-- 주요 콘텐츠 -->
+        <div class="flex px-16 gap-8">
+            <!-- 프로젝트 목표 섹션 -->
+            <div class="w-1/2">
+                <div class="flex items-center mb-4">
+                    <div class="icon-bg mr-3">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">프로젝트 목표</h2>
+                </div>
+                
+                <div class="flex flex-col gap-4">
+                    <div class="goal-card p-4 rounded">
+                        <div class="flex items-start">
+                            <i class="fas fa-robot text-blue-500 mt-1 mr-3"></i>
+                            <p class="font-medium">AI 코드 생성 도구(Claude)를 활용한 웹 서비스 개발 능력 향상</p>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card p-4 rounded">
+                        <div class="flex items-start">
+                            <i class="fas fa-code text-blue-500 mt-1 mr-3"></i>
+                            <p class="font-medium">v0 프로토타입 기반으로 개인별 맞춤형 웹사이트 구축</p>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card p-4 rounded">
+                        <div class="flex items-start">
+                            <i class="fab fa-github text-blue-500 mt-1 mr-3"></i>
+                            <p class="font-medium">GitHub 및 GitHub Pages를 이용한 버전 관리 및 웹 호스팅 경험 습득</p>
+                        </div>
+                    </div>
+                    
+                    <div class="goal-card p-4 rounded">
+                        <div class="flex items-start">
+                            <i class="fas fa-lightbulb text-blue-500 mt-1 mr-3"></i>
+                            <p class="font-medium">최신 AI 기술의 웹 개발 적용 가능성 탐색</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 개발 배경 및 필요성 섹션 -->
+            <div class="w-1/2">
+                <div class="flex items-center mb-4">
+                    <div class="icon-bg mr-3">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">개발 배경 및 필요성</h2>
+                </div>
+                
+                <div class="background-card p-6">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">1</div>
+                        <p class="text-gray-700">최근 AI 기술, 특히 대규모 언어 모델(LLM)을 활용한 코드 생성은 개발 생산성을 획기적으로 높일 수 있는 잠재력을 보여주고 있음</p>
+                    </div>
+                    
+                    <div class="flex items-start mb-4">
+                        <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">2</div>
+                        <p class="text-gray-700">본 프로젝트는 AI 도구를 실제 웹 개발 과정에 적용해보고, 그 효용성과 한계를 직접 경험하고자 기획됨</p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">3</div>
+                        <p class="text-gray-700">빠르게 변화하는 기술 트렌드에 발맞춰 AI를 활용한 서비스 개발 역량 강화 필요</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 하단 비주얼 요소 -->
+        <div class="mt-auto flex justify-center pb-8">
+            <div class="flex space-x-16 items-center">
+                <div class="text-center p-3">
+                    <i class="fas fa-brain text-5xl text-blue-500 mb-2"></i>
+                    <p class="text-gray-600 font-medium">AI 기술</p>
+                </div>
+                <div class="text-4xl text-blue-300">+</div>
+                <div class="text-center p-3">
+                    <i class="fas fa-code text-5xl text-blue-500 mb-2"></i>
+                    <p class="text-gray-600 font-medium">웹 개발</p>
+                </div>
+                <div class="text-4xl text-blue-300">=</div>
+                <div class="text-center p-3">
+                    <i class="fas fa-rocket text-5xl text-blue-500 mb-2"></i>
+                    <p class="text-gray-600 font-medium">혁신적인 생산성</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 네비게이션 버튼 -->
+        <div class="fixed bottom-4 right-4 flex space-x-2">
+            <a href="page1.html" class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
+                <span>1</span>
+            </a>
+            <a href="page2.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>2</span>
+            </a>
+            <a href="page3.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>3</span>
+            </a>
+            <a href="html4.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>4</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주요 사용 도구 및 기술</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-accent {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            top: 0;
+            left: 0;
+        }
+        .title {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .tech-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-header {
+            padding: 1rem;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .tool-item {
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        .tool-item:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-left: 3px solid #3b82f6;
+            transform: translateX(5px);
+        }
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+        .chart-container {
+            position: relative;
+            height: 220px;
+            width: 100%;
+        }
+        .workflow-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .workflow-step {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .workflow-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            width: 60px;
+            height: 2px;
+            background-color: #3b82f6;
+        }
+        .workflow-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <div class="header-accent"></div>
+        
+        <!-- 슬라이드 헤더 -->
+        <div class="px-16 pt-10 pb-6">
+            <h1 class="title text-5xl mb-2">주요 사용 도구 및 기술</h1>
+            <p class="text-gray-600 text-xl">프로젝트에 활용된 핵심 도구와 기술 스택</p>
+        </div>
+        
+        <!-- 주요 콘텐츠 -->
+        <div class="px-16 grid grid-cols-3 gap-6 flex-1">
+            <!-- AI 코드 생성 -->
+            <div class="tech-card flex flex-col">
+                <div class="card-header bg-gradient-to-r from-blue-600 to-blue-500">
+                    <i class="fas fa-robot text-2xl mr-2"></i>
+                    <h2 class="text-xl">AI 코드 생성</h2>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <div class="flex justify-center mb-4">
+                        <div class="icon-circle bg-blue-100">
+                            <i class="fas fa-brain text-3xl text-blue-600"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-center font-bold text-xl text-blue-800 mb-4">Claude</h3>
+                    <ul class="space-y-3 mt-2 flex-1">
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-code text-blue-500 mt-1 mr-2"></i>
+                            <span>주요 코드 생성 및 수정</span>
+                        </li>
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-lightbulb text-blue-500 mt-1 mr-2"></i>
+                            <span>개발 아이디어 구체화</span>
+                        </li>
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-bug text-blue-500 mt-1 mr-2"></i>
+                            <span>코드 디버깅 및 오류 수정</span>
+                        </li>
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-magic text-blue-500 mt-1 mr-2"></i>
+                            <span>프롬프트 엔지니어링 기법 활용</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 버전 관리 및 호스팅 -->
+            <div class="tech-card flex flex-col">
+                <div class="card-header bg-gradient-to-r from-gray-700 to-gray-600">
+                    <i class="fas fa-code-branch text-2xl mr-2"></i>
+                    <h2 class="text-xl">버전 관리 및 호스팅</h2>
+                </div>
+                <div class="p-5 flex-1 flex flex-col">
+                    <div class="flex justify-center space-x-4 mb-6">
+                        <div class="flex flex-col items-center">
+                            <div class="icon-circle bg-gray-100">
+                                <i class="fab fa-git-alt text-2xl text-gray-700"></i>
+                            </div>
+                            <span class="font-bold mt-2">Git</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="icon-circle bg-gray-100">
+                                <i class="fab fa-github text-2xl text-gray-800"></i>
+                            </div>
+                            <span class="font-bold mt-2">GitHub</span>
+                        </div>
+                    </div>
+                    
+                    <ul class="space-y-3 flex-1">
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-history text-gray-600 mt-1 mr-2"></i>
+                            <span>로컬 및 원격 소스 코드 버전 관리</span>
+                        </li>
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-cloud-upload-alt text-gray-600 mt-1 mr-2"></i>
+                            <span>GitHub Pages로 무료 웹사이트 호스팅</span>
+                        </li>
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-users text-gray-600 mt-1 mr-2"></i>
+                            <span>협업 환경 구축 및 소스 코드 공유</span>
+                        </li>
+                        <li class="tool-item p-2 flex items-start">
+                            <i class="fas fa-sitemap text-gray-600 mt-1 mr-2"></i>
+                            <span>브랜치 관리를 통한 기능별 개발</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 웹 기술 -->
+            <div class="tech-card flex flex-col">
+                <div class="card-header bg-gradient-to-r from-green-600 to-green-500">
+                    <i class="fas fa-globe text-2xl mr-2"></i>
+                    <h2 class="text-xl">웹 기술</h2>
+                </div>
+                <div class="p-5 flex-1">
+                    <div class="chart-container mb-4">
+                        <canvas id="webTechChart"></canvas>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-2 mt-4">
+                        <div class="bg-orange-100 p-3 rounded-lg flex flex-col items-center">
+                            <i class="fab fa-html5 text-2xl text-orange-600"></i>
+                            <span class="font-semibold mt-1 text-sm">HTML</span>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-lg flex flex-col items-center">
+                            <i class="fab fa-css3-alt text-2xl text-blue-600"></i>
+                            <span class="font-semibold mt-1 text-sm">CSS</span>
+                        </div>
+                        <div class="bg-yellow-100 p-3 rounded-lg flex flex-col items-center">
+                            <i class="fab fa-js text-2xl text-yellow-600"></i>
+                            <span class="font-semibold mt-1 text-sm">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 bg-green-50 p-3 rounded-lg">
+                        <h4 class="font-semibold text-green-800 mb-2 flex items-center">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            주요 적용 기술
+                        </h4>
+                        <ul class="text-sm text-green-700 space-y-1">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>v0 기반 웹사이트 구조 확장</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>반응형 디자인 구현</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>동적 콘텐츠 처리 JavaScript</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 개발 워크플로우 -->
+        <div class="px-16 mt-6 mb-8">
+            <div class="workflow-container p-4">
+                <h3 class="text-center font-bold text-gray-700 mb-4">개발 워크플로우</h3>
+                <div class="flex justify-between items-center px-10">
+                    <div class="workflow-step">
+                        <div class="workflow-icon bg-blue-500">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <span class="font-medium">요구사항 정의</span>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="workflow-icon bg-blue-500">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="font-medium">Claude 코드 생성</span>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="workflow-icon bg-blue-500">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <span class="font-medium">코드 검토/수정</span>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="workflow-icon bg-blue-500">
+                            <i class="fab fa-git-alt"></i>
+                        </div>
+                        <span class="font-medium">Git 버전 관리</span>
+                    </div>
+                    
+                    <div class="workflow-step">
+                        <div class="workflow-icon bg-blue-500">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <span class="font-medium">GitHub Pages 배포</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 네비게이션 버튼 -->
+        <div class="fixed bottom-4 right-4 flex space-x-2">
+            <a href="page1.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>1</span>
+            </a>
+            <a href="page2.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>2</span>
+            </a>
+            <a href="page3.html" class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
+                <span>3</span>
+            </a>
+            <a href="html4.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>4</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('webTechChart').getContext('2d');
+            const webTechChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['HTML', 'CSS', 'JavaScript'],
+                    datasets: [{
+                        data: [30, 35, 35],
+                        backgroundColor: [
+                            'rgba(237, 137, 54, 0.7)',
+                            'rgba(59, 130, 246, 0.7)',
+                            'rgba(234, 179, 8, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(237, 137, 54, 1)',
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(234, 179, 8, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '웹 기술 사용 비율',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    cutout: '65%'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

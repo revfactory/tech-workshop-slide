@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀원별 결과물 소개</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-accent {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            top: 0;
+            left: 0;
+        }
+        .title {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .project-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-header {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: #2563eb;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .feature-badge {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: #2563eb;
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .feature-badge:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+            transform: scale(1.05);
+        }
+        .claude-point {
+            border-left: 3px solid #3b82f6;
+            padding-left: 0.75rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        .claude-point:hover {
+            background-color: rgba(59, 130, 246, 0.05);
+            padding-left: 1rem;
+        }
+        .url-link {
+            background-color: #f3f4f6;
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #4b5563;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+        }
+        .url-link:hover {
+            background-color: #e5e7eb;
+            border-color: #d1d5db;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 0 1rem;
+            flex-grow: 1;
+        }
+        .project-1 {
+            grid-column: 1 / 4;
+            grid-row: 1 / 2;
+        }
+        .project-2 {
+            grid-column: 4 / 7;
+            grid-row: 1 / 2;
+        }
+        .project-3 {
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+        }
+        .project-4 {
+            grid-column: 3 / 5;
+            grid-row: 2 / 3;
+        }
+        .project-5 {
+            grid-column: 5 / 7;
+            grid-row: 2 / 3;
+        }
+        .section-heading {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-accent"></div>
+        
+        <!-- 슬라이드 헤더 -->
+        <div class="px-16 pt-10 pb-5">
+            <h1 class="title text-5xl mb-2">팀원별 결과물 소개</h1>
+            <p class="text-gray-600 text-xl">v0 프로토타입과 Claude를 활용한 웹사이트 구축</p>
+        </div>
+        
+        <!-- 프로젝트 그리드 -->
+        <div class="project-grid px-16 mb-8">
+            <!-- 프로젝트 1 -->
+            <div class="project-1">
+                <div class="project-card h-full">
+                    <div class="card-header">
+                        <div class="avatar">Y</div>
+                        <h2 class="text-lg">yang.me</h2>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <div class="url-link flex items-center">
+                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <a href="https://campaign940.github.io/terminology" target="_blank">https://campaign940.github.io/terminology</a>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            주요 특징
+                        </div>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="feature-badge">용어집 정리</span>
+                            <span class="feature-badge">검색 기능</span>
+                            <span class="feature-badge">깔끔한 UI</span>
+                            <span class="feature-badge">카테고리 필터</span>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            Claude 활용 포인트
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="claude-point text-sm">용어 데이터 구조화</div>
+                            <div class="claude-point text-sm">검색 알고리즘 구현</div>
+                            <div class="claude-point text-sm">반응형 레이아웃 설계</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 프로젝트 2 -->
+            <div class="project-2">
+                <div class="project-card h-full">
+                    <div class="card-header">
+                        <div class="avatar">E</div>
+                        <h2 class="text-lg">esther.0605</h2>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <div class="url-link flex items-center">
+                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <a href="https://esther-kakao.github.io/test_workshop" target="_blank">https://esther-kakao.github.io/test_workshop</a>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            주요 특징
+                        </div>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="feature-badge">워크숍 안내</span>
+                            <span class="feature-badge">인터랙티브 요소</span>
+                            <span class="feature-badge">사용자 친화적 디자인</span>
+                            <span class="feature-badge">일정 관리</span>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            Claude 활용 포인트
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="claude-point text-sm">레이아웃 디자인 코드 생성</div>
+                            <div class="claude-point text-sm">이벤트 핸들링 스크립트</div>
+                            <div class="claude-point text-sm">모달 창 구현</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 프로젝트 3 -->
+            <div class="project-3">
+                <div class="project-card h-full">
+                    <div class="card-header">
+                        <div class="avatar">S</div>
+                        <h2 class="text-lg">stella.ca</h2>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <div class="url-link flex items-center">
+                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <a href="https://ykandiepark.github.io/techterm2" target="_blank">https://ykandiepark.github.io/techterm2</a>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            주요 특징
+                        </div>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="feature-badge">기술 용어 해설</span>
+                            <span class="feature-badge">카테고리별 분류</span>
+                            <span class="feature-badge">모던한 디자인</span>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            Claude 활용 포인트
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="claude-point text-sm">데이터 표시 방식</div>
+                            <div class="claude-point text-sm">UI 컴포넌트 생성</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 프로젝트 4 -->
+            <div class="project-4">
+                <div class="project-card h-full">
+                    <div class="card-header">
+                        <div class="avatar">T</div>
+                        <h2 class="text-lg">troy.x</h2>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <div class="url-link flex items-center">
+                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <a href="https://vondisky.github.io/portal" target="_blank">https://vondisky.github.io/portal</a>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            주요 특징
+                        </div>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="feature-badge">포털 형태</span>
+                            <span class="feature-badge">다양한 정보 연결</span>
+                            <span class="feature-badge">맞춤형 링크</span>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            Claude 활용 포인트
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="claude-point text-sm">그리드 시스템 구축</div>
+                            <div class="claude-point text-sm">링크 관리 로직</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 프로젝트 5 -->
+            <div class="project-5">
+                <div class="project-card h-full">
+                    <div class="card-header">
+                        <div class="avatar">S</div>
+                        <h2 class="text-lg">sue.cream</h2>
+                    </div>
+                    <div class="p-4 flex flex-col flex-1">
+                        <div class="url-link flex items-center">
+                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <a href="https://sue-cream.github.io/workshoptest" target="_blank">https://sue-cream.github.io/workshoptest</a>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            주요 특징
+                        </div>
+                        <div class="flex flex-wrap mb-3">
+                            <span class="feature-badge">워크숍 테스트</span>
+                            <span class="feature-badge">특정 기능 시연</span>
+                            <span class="feature-badge">심플한 구성</span>
+                        </div>
+                        
+                        <div class="section-heading">
+                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            Claude 활용 포인트
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="claude-point text-sm">기능 프로토타이핑</div>
+                            <div class="claude-point text-sm">테스트용 데이터 생성</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 하단 요약 -->
+        <div class="mt-auto mb-6 px-16">
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start">
+                <i class="fas fa-info-circle text-blue-500 text-xl mt-0.5 mr-3"></i>
+                <div>
+                    <h3 class="font-semibold text-blue-800 mb-1">프로젝트 성과</h3>
+                    <p class="text-blue-700 text-sm">
+                        모든 팀원이 Claude AI를 활용하여 v0 프로토타입을 확장하고, GitHub Pages를 통해 각자의 웹사이트를 성공적으로 배포했습니다.
+                        팀원별로 다양한 기능과 디자인을 적용하여 창의적인 웹 서비스를 구현하였습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 네비게이션 버튼 -->
+        <div class="fixed bottom-4 right-4 flex space-x-2">
+            <a href="page1.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>1</span>
+            </a>
+            <a href="page2.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>2</span>
+            </a>
+            <a href="page3.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+                <span>3</span>
+            </a>
+            <a href="html4.html" class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
+                <span>4</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+
