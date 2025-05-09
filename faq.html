@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주 묻는 질문(FAQ)</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: #e2e8f0;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-accent {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, #4f46e5, #6366f1, #818cf8);
+            top: 0;
+            left: 0;
+        }
+        .title {
+            background: linear-gradient(90deg, #8b5cf6, #6366f1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .faq-card {
+            background-color: #1f2937;
+            border-radius: 12px;
+            border-left: 5px solid #6366f1;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #e2e8f0;
+            transition: background-color 0.2s;
+        }
+        .faq-question:hover {
+            background-color: #2d3748;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            border-top: 1px solid #374151;
+            color: #d1d5db;
+        }
+        .faq-card.active .faq-answer {
+            padding: 16px 20px;
+            max-height: 500px;
+        }
+        .faq-card.active .toggle-icon i {
+            transform: rotate(180deg);
+        }
+        .toggle-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .toggle-icon i {
+            transition: transform 0.3s ease;
+        }
+        .section-title {
+            color: #e2e8f0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #6366f1;
+            display: inline-block;
+        }
+        .highlight {
+            color: #818cf8;
+            font-weight: 600;
+        }
+        .contact-card {
+            background-color: #1f2937;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .contact-icon {
+            background-color: #374151;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="header-accent"></div>
+        
+        <!-- 슬라이드 헤더 -->
+        <div class="px-16 pt-10 pb-5">
+            <h1 class="title text-5xl mb-2">자주 묻는 질문 (FAQ)</h1>
+            <p class="text-gray-400 text-xl">AI를 활용한 웹 개발 프로젝트에 대한 질문과 답변</p>
+        </div>
+        
+        <!-- FAQ 콘텐츠 -->
+        <div class="px-16 py-6 overflow-y-auto">
+            <div class="grid grid-cols-2 gap-8">
+                <!-- 왼쪽 열 FAQ 항목 -->
+                <div>
+                    <h2 class="section-title text-2xl font-bold">프로젝트 개요</h2>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>이 프로젝트의 주요 목표는 무엇인가요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>이 프로젝트의 주요 목표는 다음과 같습니다:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>AI 코드 생성 도구(Claude)를 활용한 웹 서비스 개발 능력 향상</li>
+                                <li>v0 프로토타입 기반으로 개인별 맞춤형 웹사이트 구축</li>
+                                <li>GitHub 및 GitHub Pages를 이용한 버전 관리 및 웹 호스팅 경험 습득</li>
+                                <li>최신 AI 기술의 웹 개발 적용 가능성 탐색</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>v0 프로토타입이란 무엇인가요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>v0 프로토타입은 모든 팀원이 공통된 기반에서 시작할 수 있도록 제공된 기본적인 웹사이트 구조입니다. HTML/CSS 기반으로 심플한 디자인과 레이아웃을 갖추고 있으며, 각 팀원이 이를 기반으로 자신만의 아이디어를 구체화하고 확장할 수 있도록 했습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>이 프로젝트는 얼마나 오래 진행되었나요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>이 프로젝트는 약 2주간의 워크샵 형태로 진행되었습니다. 초기 1-2일 동안은 Claude와 GitHub 사용법에 대한 교육이 이루어졌으며, 나머지 기간 동안 팀원들은 개인 프로젝트를 진행하고 필요할 때 도움을 요청하는 방식으로 진행되었습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title text-2xl font-bold mt-8">AI 활용</h2>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>Claude는 어떻게 코드 생성에 활용되었나요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Claude는 다음과 같은 방식으로 코드 생성에 활용되었습니다:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>기능 구현 코드 생성 (필터링, 동적 콘텐츠 생성, UI 개선 등)</li>
+                                <li>코드 리팩토링 및 가독성 개선</li>
+                                <li>CSS 스타일 및 인터랙티브 JavaScript 효과 생성</li>
+                                <li>오류 수정 및 디버깅</li>
+                                <li>기능 프로토타이핑</li>
+                            </ul>
+                            <p class="mt-2">팀원들은 Claude에게 원하는 기능이나 개선사항을 자연어로 설명하고, Claude가 제안한 코드를 자신의 프로젝트에 통합했습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>AI가 생성한 코드는 항상 올바르게 작동했나요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Claude가 생성한 코드는 대부분 잘 작동했지만, 항상 완벽하지는 않았습니다. 때때로 프로젝트 맥락을 완전히 이해하지 못하거나 오류가 있는 코드를 생성할 수 있었습니다. 팀원들은 AI가 생성한 코드를 검토하고 필요에 따라 수정하는 과정이 필요했습니다.</p>
+                            <p class="mt-2">중요한 점은 AI를 코드 작성의 완전한 대체제가 아닌 개발자의 생산성을 높이는 도구로 활용했다는 것입니다. 개발자의 전문성과 AI의 코드 생성 능력을 결합함으로써 최상의 결과를 얻을 수 있었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 오른쪽 열 FAQ 항목 -->
+                <div>
+                    <h2 class="section-title text-2xl font-bold">개발 과정</h2>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>개발 워크플로우는 어떻게 구성되었나요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>프로젝트의 개발 워크플로우는 다음과 같은 단계로 진행되었습니다:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-1">
+                                <li>요구사항 정의: 개발하고자 하는 기능이나 개선사항을 명확히 정의</li>
+                                <li>Claude 코드 생성: AI에게 요구사항을 설명하고 코드 생성 요청</li>
+                                <li>코드 검토 및 수정: 생성된 코드를 검토하고 필요한 경우 수정</li>
+                                <li>Git 버전 관리: 변경사항을 의미 있는 단위로 커밋</li>
+                                <li>GitHub Pages 배포: 원격 저장소에 푸시하고 웹사이트 배포</li>
+                            </ol>
+                            <p class="mt-2">이 과정은 반복적으로 수행되며, 각 단계에서 필요에 따라 이전 단계로 돌아가 수정을 진행했습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>GitHub Pages 배포 과정은 어떻게 진행되었나요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>GitHub Pages 배포 과정은 다음과 같은 단계로 진행되었습니다:</p>
+                            <ol class="list-decimal list-inside mt-2 space-y-1">
+                                <li>Local Repository 생성: 각자 프로젝트 폴더에서 Git 저장소 초기화 (<code class="bg-gray-800 px-1 rounded">git init</code>)</li>
+                                <li>Remote Repository 연결: GitHub에 새 저장소 생성 및 연결 (<code class="bg-gray-800 px-1 rounded">git remote add origin [URL]</code>)</li>
+                                <li>코드 변경 및 커밋: 의미 있는 단위로 변경사항 커밋 (<code class="bg-gray-800 px-1 rounded">git add . && git commit -m "메시지"</code>)</li>
+                                <li>GitHub Push: 로컬 변경사항을 원격 저장소로 푸시 (<code class="bg-gray-800 px-1 rounded">git push -u origin main</code>)</li>
+                                <li>GitHub Pages 설정: 저장소 설정에서 Pages 기능 활성화</li>
+                            </ol>
+                            <p class="mt-2">GitHub Pages는 특별한 설정 없이도 정적 웹사이트를 손쉽게 배포할 수 있는 장점이 있어, 팀원들이 자신의 웹사이트를 인터넷상에 공개하는 데 큰 도움이 되었습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>팀원별 결과물은 어떻게 다른가요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>같은 v0 프로토타입에서 시작했지만, 각 팀원은 자신만의 아이디어와 관심사에 따라 다양한 웹사이트를 개발했습니다:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li><span class="highlight">yang.me</span>: 용어집 정리 웹사이트로 검색 기능과 카테고리 필터링 기능 구현</li>
+                                <li><span class="highlight">esther.0605</span>: 워크숍 안내 사이트로 인터랙티브 요소와 사용자 친화적 디자인 적용</li>
+                                <li><span class="highlight">stella.ca</span>: 기술 용어 해설 사이트로 카테고리별 분류와 모던한 디자인 적용</li>
+                                <li><span class="highlight">troy.x</span>: 포털 형태의 사이트로 다양한 정보 연결과 맞춤형 링크 제공</li>
+                                <li><span class="highlight">sue.cream</span>: 워크숍 테스트 사이트로 특정 기능 시연과 심플한 구성 적용</li>
+                            </ul>
+                            <p class="mt-2">각 팀원은 Claude를 활용하여 자신만의 독특한 기능과 디자인 요소를 구현했습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title text-2xl font-bold mt-8">기술 및 도구</h2>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>어떤 웹 기술이 사용되었나요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>프로젝트에서는 주로 다음과 같은 웹 기술이 사용되었습니다:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li><span class="highlight">HTML</span>: 웹사이트의 기본 구조 및 콘텐츠 구성</li>
+                                <li><span class="highlight">CSS</span>: 스타일링, 레이아웃, 반응형 디자인 구현</li>
+                                <li><span class="highlight">JavaScript</span>: 동적 콘텐츠 처리, 사용자 상호작용, 필터링 기능 구현</li>
+                                <li><span class="highlight">Tailwind CSS</span>: 일부 프로젝트에서 사용된 유틸리티 기반 CSS 프레임워크</li>
+                                <li><span class="highlight">FontAwesome</span>: 아이콘 라이브러리</li>
+                                <li><span class="highlight">Chart.js</span>: 데이터 시각화 라이브러리 (일부 프로젝트에서 사용)</li>
+                            </ul>
+                            <p class="mt-2">기본적인 웹 기술을 중심으로 하되, 각 팀원의 필요에 따라 추가 라이브러리나 프레임워크를 활용했습니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <span>이 프로젝트의 주요 성과는 무엇인가요?</span>
+                            <div class="toggle-icon">
+                                <i class="fas fa-chevron-down text-indigo-400"></i>
+                            </div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>이 프로젝트의 주요 성과는 다음과 같습니다:</p>
+                            <ul class="list-disc list-inside mt-2 space-y-1">
+                                <li>모든 팀원이 Claude AI를 활용하여 v0 프로토타입을 확장하는 경험 습득</li>
+                                <li>GitHub Pages를 통해 각자의 웹사이트를 성공적으로 배포</li>
+                                <li>팀원별로 다양한 기능과 디자인을 적용한 창의적인 웹 서비스 구현</li>
+                                <li>AI 코드 생성 도구를 실제 개발 과정에 통합하는 방법론 개발</li>
+                                <li>비개발자도 AI의 도움을 받아 웹 개발에 참여할 수 있는 가능성 확인</li>
+                            </ul>
+                            <p class="mt-2">특히, AI를 개발 과정에 통합하는 경험을 통해 팀원들은 미래 기술 트렌드에 적응하고 이를 활용하는 능력을 키울 수 있었습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 추가 문의 안내 -->
+            <div class="contact-card mt-8">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-indigo-300 mb-1">추가 문의 사항이 있으신가요?</h3>
+                    <p class="text-gray-300">프로젝트에 대한 더 자세한 정보가 필요하시면 이메일로 문의해주세요: <span class="text-indigo-400">workshop@example.com</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 네비게이션 버튼 -->
+        <div class="fixed bottom-4 right-4 flex space-x-2">
+            <a href="page1.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+                <span>1</span>
+            </a>
+            <a href="page2.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+                <span>2</span>
+            </a>
+            <a href="page3.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+                <span>3</span>
+            </a>
+            <a href="html4.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+                <span>4</span>
+            </a>
+            <a href="faq.html" class="bg-indigo-700 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-gray-700">
+                <span>?</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ 아코디언 기능
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqCard = question.parentElement;
+                    faqCard.classList.toggle('active');
+                    
+                    // 다른 FAQ 카드 닫기 (선택사항)
+                    // document.querySelectorAll('.faq-card').forEach(card => {
+                    //     if (card !== faqCard) {
+                    //         card.classList.remove('active');
+                    //     }
+                    // });
+                });
+            });
+            
+            // 기본적으로 첫 번째 FAQ 아이템을 열어두기
+            document.querySelector('.faq-card').classList.add('active');
+        });
+    </script>
+</body>
+</html>
