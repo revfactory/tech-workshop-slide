@@ -14,16 +14,23 @@
             font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
             padding: 0;
-            width: 1280px;
-            min-height: 720px;
-            overflow: hidden;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
+            overflow-x: hidden;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
         }
         .header-accent {
             position: absolute;
@@ -73,116 +80,116 @@
         <div class="header-accent"></div>
         
         <!-- 슬라이드 헤더 -->
-        <div class="px-16 pt-10 pb-6">
-            <h1 class="title text-5xl mb-3">AI 코드 생성 도구(Claude)를 활용한<br>웹 서비스 개발 프로젝트</h1>
-            <p class="text-gray-600 text-xl">프로젝트 개요</p>
+        <div class="px-4 md:px-16 pt-6 md:pt-10 pb-4 md:pb-6">
+            <h1 class="title text-3xl md:text-5xl mb-2 md:mb-3">AI 코드 생성 도구(Claude)를 활용한<br class="hidden sm:block">웹 서비스 개발 프로젝트</h1>
+            <p class="text-gray-600 text-lg md:text-xl">프로젝트 개요</p>
         </div>
         
         <!-- 주요 콘텐츠 -->
-        <div class="flex px-16 gap-8">
+        <div class="flex flex-col md:flex-row px-4 md:px-16 gap-6 md:gap-8">
             <!-- 프로젝트 목표 섹션 -->
-            <div class="w-1/2">
+            <div class="w-full md:w-1/2">
                 <div class="flex items-center mb-4">
                     <div class="icon-bg mr-3">
                         <i class="fas fa-bullseye"></i>
                     </div>
-                    <h2 class="text-2xl font-bold text-gray-800">프로젝트 목표</h2>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800">프로젝트 목표</h2>
                 </div>
-                
+
                 <div class="flex flex-col gap-4">
                     <div class="goal-card p-4 rounded">
                         <div class="flex items-start">
                             <i class="fas fa-robot text-blue-500 mt-1 mr-3"></i>
-                            <p class="font-medium">AI 코드 생성 도구(Claude)를 활용한 웹 서비스 개발 능력 향상</p>
+                            <p class="font-medium text-sm md:text-base">AI 코드 생성 도구(Claude)를 활용한 웹 서비스 개발 능력 향상</p>
                         </div>
                     </div>
-                    
+
                     <div class="goal-card p-4 rounded">
                         <div class="flex items-start">
                             <i class="fas fa-code text-blue-500 mt-1 mr-3"></i>
-                            <p class="font-medium">v0 프로토타입 기반으로 개인별 맞춤형 웹사이트 구축</p>
+                            <p class="font-medium text-sm md:text-base">v0 프로토타입 기반으로 개인별 맞춤형 웹사이트 구축</p>
                         </div>
                     </div>
-                    
+
                     <div class="goal-card p-4 rounded">
                         <div class="flex items-start">
                             <i class="fab fa-github text-blue-500 mt-1 mr-3"></i>
-                            <p class="font-medium">GitHub 및 GitHub Pages를 이용한 버전 관리 및 웹 호스팅 경험 습득</p>
+                            <p class="font-medium text-sm md:text-base">GitHub 및 GitHub Pages를 이용한 버전 관리 및 웹 호스팅 경험 습득</p>
                         </div>
                     </div>
-                    
+
                     <div class="goal-card p-4 rounded">
                         <div class="flex items-start">
                             <i class="fas fa-lightbulb text-blue-500 mt-1 mr-3"></i>
-                            <p class="font-medium">최신 AI 기술의 웹 개발 적용 가능성 탐색</p>
+                            <p class="font-medium text-sm md:text-base">최신 AI 기술의 웹 개발 적용 가능성 탐색</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- 개발 배경 및 필요성 섹션 -->
-            <div class="w-1/2">
+            <div class="w-full md:w-1/2 mt-6 md:mt-0">
                 <div class="flex items-center mb-4">
                     <div class="icon-bg mr-3">
                         <i class="fas fa-question-circle"></i>
                     </div>
-                    <h2 class="text-2xl font-bold text-gray-800">개발 배경 및 필요성</h2>
+                    <h2 class="text-xl md:text-2xl font-bold text-gray-800">개발 배경 및 필요성</h2>
                 </div>
-                
-                <div class="background-card p-6">
+
+                <div class="background-card p-4 md:p-6">
                     <div class="flex items-start mb-4">
-                        <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">1</div>
-                        <p class="text-gray-700">최근 AI 기술, 특히 대규모 언어 모델(LLM)을 활용한 코드 생성은 개발 생산성을 획기적으로 높일 수 있는 잠재력을 보여주고 있음</p>
+                        <div class="bg-blue-500 rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0 text-xs md:text-base">1</div>
+                        <p class="text-gray-700 text-sm md:text-base">최근 AI 기술, 특히 대규모 언어 모델(LLM)을 활용한 코드 생성은 개발 생산성을 획기적으로 높일 수 있는 잠재력을 보여주고 있음</p>
                     </div>
-                    
+
                     <div class="flex items-start mb-4">
-                        <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">2</div>
-                        <p class="text-gray-700">본 프로젝트는 AI 도구를 실제 웹 개발 과정에 적용해보고, 그 효용성과 한계를 직접 경험하고자 기획됨</p>
+                        <div class="bg-blue-500 rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0 text-xs md:text-base">2</div>
+                        <p class="text-gray-700 text-sm md:text-base">본 프로젝트는 AI 도구를 실제 웹 개발 과정에 적용해보고, 그 효용성과 한계를 직접 경험하고자 기획됨</p>
                     </div>
-                    
+
                     <div class="flex items-start">
-                        <div class="bg-blue-500 rounded-full w-8 h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0">3</div>
-                        <p class="text-gray-700">빠르게 변화하는 기술 트렌드에 발맞춰 AI를 활용한 서비스 개발 역량 강화 필요</p>
+                        <div class="bg-blue-500 rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center text-white font-bold mr-3 flex-shrink-0 text-xs md:text-base">3</div>
+                        <p class="text-gray-700 text-sm md:text-base">빠르게 변화하는 기술 트렌드에 발맞춰 AI를 활용한 서비스 개발 역량 강화 필요</p>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- 하단 비주얼 요소 -->
-        <div class="mt-auto flex justify-center pb-8">
-            <div class="flex space-x-16 items-center">
-                <div class="text-center p-3">
-                    <i class="fas fa-brain text-5xl text-blue-500 mb-2"></i>
-                    <p class="text-gray-600 font-medium">AI 기술</p>
+        <div class="mt-auto flex justify-center pb-4 md:pb-8">
+            <div class="flex flex-wrap md:flex-nowrap justify-center space-x-4 md:space-x-16 items-center">
+                <div class="text-center p-2 md:p-3">
+                    <i class="fas fa-brain text-3xl md:text-5xl text-blue-500 mb-1 md:mb-2"></i>
+                    <p class="text-gray-600 font-medium text-sm md:text-base">AI 기술</p>
                 </div>
-                <div class="text-4xl text-blue-300">+</div>
-                <div class="text-center p-3">
-                    <i class="fas fa-code text-5xl text-blue-500 mb-2"></i>
-                    <p class="text-gray-600 font-medium">웹 개발</p>
+                <div class="text-2xl md:text-4xl text-blue-300">+</div>
+                <div class="text-center p-2 md:p-3">
+                    <i class="fas fa-code text-3xl md:text-5xl text-blue-500 mb-1 md:mb-2"></i>
+                    <p class="text-gray-600 font-medium text-sm md:text-base">웹 개발</p>
                 </div>
-                <div class="text-4xl text-blue-300">=</div>
-                <div class="text-center p-3">
-                    <i class="fas fa-rocket text-5xl text-blue-500 mb-2"></i>
-                    <p class="text-gray-600 font-medium">혁신적인 생산성</p>
+                <div class="text-2xl md:text-4xl text-blue-300">=</div>
+                <div class="text-center p-2 md:p-3">
+                    <i class="fas fa-rocket text-3xl md:text-5xl text-blue-500 mb-1 md:mb-2"></i>
+                    <p class="text-gray-600 font-medium text-sm md:text-base">혁신적인 생산성</p>
                 </div>
             </div>
         </div>
         
         <!-- 네비게이션 버튼 -->
-        <div class="fixed bottom-4 right-4 flex space-x-2">
-            <a href="page1.html" class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
+        <div class="fixed bottom-2 md:bottom-4 right-2 md:right-4 flex space-x-1 md:space-x-2 z-50">
+            <a href="page1.html" class="bg-blue-500 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow-lg border-2 border-white text-sm md:text-base">
                 <span>1</span>
             </a>
-            <a href="page2.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="page2.html" class="bg-blue-200 text-blue-800 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>2</span>
             </a>
-            <a href="page3.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="page3.html" class="bg-blue-200 text-blue-800 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>3</span>
             </a>
-            <a href="html4.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="html4.html" class="bg-blue-200 text-blue-800 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>4</span>
             </a>
-            <a href="faq.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="faq.html" class="bg-blue-200 text-blue-800 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>?</span>
             </a>
         </div>

@@ -11,19 +11,26 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
             color: #e2e8f0;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         .slide-container {
-            width: 1280px;
-            min-height: 720px;
+            width: 100%;
+            max-width: 1280px;
+            min-height: 100vh;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
+        }
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
         }
         .header-accent {
             position: absolute;
@@ -44,18 +51,24 @@
         .faq-card {
             background-color: #1f2937;
             border-radius: 12px;
-            border-left: 5px solid #6366f1;
+            border-left: 4px solid #6366f1;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            .faq-card {
+                border-left: 5px solid #6366f1;
+                margin-bottom: 16px;
+            }
         }
         .faq-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
         }
         .faq-question {
-            padding: 16px 20px;
+            padding: 12px 16px;
             font-weight: 600;
             cursor: pointer;
             display: flex;
@@ -63,21 +76,41 @@
             align-items: center;
             color: #e2e8f0;
             transition: background-color 0.2s;
+            font-size: 0.9rem;
+        }
+        @media (min-width: 768px) {
+            .faq-question {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
         }
         .faq-question:hover {
             background-color: #2d3748;
         }
         .faq-answer {
-            padding: 0 20px;
+            padding: 0 16px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease, padding 0.4s ease;
             border-top: 1px solid #374151;
             color: #d1d5db;
+            font-size: 0.85rem;
+        }
+        @media (min-width: 768px) {
+            .faq-answer {
+                padding: 0 20px;
+                font-size: 0.95rem;
+            }
         }
         .faq-card.active .faq-answer {
-            padding: 16px 20px;
-            max-height: 500px;
+            padding: 12px 16px;
+            max-height: 600px;
+        }
+        @media (min-width: 768px) {
+            .faq-card.active .faq-answer {
+                padding: 16px 20px;
+                max-height: 600px;
+            }
         }
         .faq-card.active .toggle-icon i {
             transform: rotate(180deg);
@@ -95,10 +128,18 @@
         }
         .section-title {
             color: #e2e8f0;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
             border-bottom: 2px solid #6366f1;
             display: inline-block;
+            font-size: 1.25rem;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                margin-bottom: 1rem;
+                padding-bottom: 0.5rem;
+                font-size: 1.5rem;
+            }
         }
         .highlight {
             color: #818cf8;
@@ -107,23 +148,42 @@
         .contact-card {
             background-color: #1f2937;
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-top: 1.5rem;
+            margin-top: 1.25rem;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .contact-card {
+                padding: 20px;
+                flex-direction: row;
+                align-items: center;
+                margin-top: 1.5rem;
+                text-align: left;
+            }
         }
         .contact-icon {
             background-color: #374151;
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #6366f1;
-            margin-right: 16px;
+            margin-bottom: 12px;
             flex-shrink: 0;
+        }
+        @media (min-width: 768px) {
+            .contact-icon {
+                width: 48px;
+                height: 48px;
+                margin-right: 16px;
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
@@ -132,17 +192,17 @@
         <div class="header-accent"></div>
         
         <!-- 슬라이드 헤더 -->
-        <div class="px-16 pt-10 pb-5">
-            <h1 class="title text-5xl mb-2">자주 묻는 질문 (FAQ)</h1>
-            <p class="text-gray-400 text-xl">AI를 활용한 웹 개발 프로젝트에 대한 질문과 답변</p>
+        <div class="px-4 md:px-16 pt-6 md:pt-10 pb-3 md:pb-5">
+            <h1 class="title text-3xl md:text-5xl mb-2">자주 묻는 질문 (FAQ)</h1>
+            <p class="text-gray-400 text-lg md:text-xl">AI를 활용한 웹 개발 프로젝트에 대한 질문과 답변</p>
         </div>
         
         <!-- FAQ 콘텐츠 -->
-        <div class="px-16 py-6 overflow-y-auto">
-            <div class="grid grid-cols-2 gap-8">
+        <div class="px-4 md:px-16 py-4 md:py-6 overflow-y-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                 <!-- 왼쪽 열 FAQ 항목 -->
                 <div>
-                    <h2 class="section-title text-2xl font-bold">프로젝트 개요</h2>
+                    <h2 class="section-title font-bold">프로젝트 개요</h2>
                     
                     <div class="faq-card">
                         <div class="faq-question">
@@ -186,7 +246,7 @@
                         </div>
                     </div>
                     
-                    <h2 class="section-title text-2xl font-bold mt-8">AI 활용</h2>
+                    <h2 class="section-title font-bold mt-6 md:mt-8">AI 활용</h2>
                     
                     <div class="faq-card">
                         <div class="faq-question">
@@ -224,7 +284,7 @@
                 
                 <!-- 오른쪽 열 FAQ 항목 -->
                 <div>
-                    <h2 class="section-title text-2xl font-bold">개발 과정</h2>
+                    <h2 class="section-title font-bold">개발 과정</h2>
                     
                     <div class="faq-card">
                         <div class="faq-question">
@@ -286,7 +346,7 @@
                         </div>
                     </div>
                     
-                    <h2 class="section-title text-2xl font-bold mt-8">기술 및 도구</h2>
+                    <h2 class="section-title font-bold mt-6 md:mt-8">기술 및 도구</h2>
                     
                     <div class="faq-card">
                         <div class="faq-question">
@@ -332,32 +392,32 @@
             </div>
             
             <!-- 추가 문의 안내 -->
-            <div class="contact-card mt-8">
+            <div class="contact-card mt-6 md:mt-8">
                 <div class="contact-icon">
-                    <i class="fas fa-envelope text-2xl"></i>
+                    <i class="fas fa-envelope text-xl md:text-2xl"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg text-indigo-300 mb-1">추가 문의 사항이 있으신가요?</h3>
-                    <p class="text-gray-300">프로젝트에 대한 더 자세한 정보가 필요하시면 이메일로 문의해주세요: <span class="text-indigo-400">workshop@example.com</span></p>
+                    <h3 class="font-bold text-base md:text-lg text-indigo-300 mb-1">추가 문의 사항이 있으신가요?</h3>
+                    <p class="text-gray-300 text-xs md:text-sm">프로젝트에 대한 더 자세한 정보가 필요하시면 이메일로 문의해주세요: <span class="text-indigo-400">workshop@example.com</span></p>
                 </div>
             </div>
         </div>
         
         <!-- 네비게이션 버튼 -->
-        <div class="fixed bottom-4 right-4 flex space-x-2">
-            <a href="page1.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+        <div class="fixed bottom-2 md:bottom-4 right-2 md:right-4 flex space-x-1 md:space-x-2 z-50">
+            <a href="page1.html" class="bg-gray-800 text-indigo-300 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>1</span>
             </a>
-            <a href="page2.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+            <a href="page2.html" class="bg-gray-800 text-indigo-300 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>2</span>
             </a>
-            <a href="page3.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+            <a href="page3.html" class="bg-gray-800 text-indigo-300 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>3</span>
             </a>
-            <a href="html4.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
+            <a href="html4.html" class="bg-gray-800 text-indigo-300 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg text-sm md:text-base">
                 <span>4</span>
             </a>
-            <a href="faq.html" class="bg-indigo-700 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-gray-700">
+            <a href="faq.html" class="bg-indigo-700 text-white rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow-lg border-2 border-gray-700 text-sm md:text-base">
                 <span>?</span>
             </a>
         </div>
