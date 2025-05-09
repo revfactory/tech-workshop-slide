@@ -13,7 +13,8 @@
             padding: 0;
             width: 1280px;
             min-height: 720px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            color: #e2e8f0;
             overflow: hidden;
         }
         .slide-container {
@@ -28,12 +29,12 @@
             position: absolute;
             height: 8px;
             width: 100%;
-            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            background: linear-gradient(90deg, #4f46e5, #6366f1, #818cf8);
             top: 0;
             left: 0;
         }
         .title {
-            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            background: linear-gradient(90deg, #8b5cf6, #6366f1);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -41,9 +42,9 @@
             line-height: 1.2;
         }
         .project-card {
-            background-color: white;
+            background-color: #1f2937;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
             height: 100%;
             display: flex;
@@ -52,12 +53,12 @@
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
         }
         .card-header {
             padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e5e7eb;
-            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            border-bottom: 1px solid #374151;
+            background: linear-gradient(90deg, #4f46e5, #6366f1);
             color: white;
             font-weight: bold;
             display: flex;
@@ -70,14 +71,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: white;
-            color: #2563eb;
+            background-color: #111827;
+            color: #818cf8;
             font-weight: bold;
             margin-right: 8px;
         }
         .feature-badge {
-            background-color: rgba(59, 130, 246, 0.1);
-            color: #2563eb;
+            background-color: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
             border-radius: 9999px;
             padding: 0.25rem 0.75rem;
             font-size: 0.75rem;
@@ -89,36 +90,36 @@
             transition: all 0.2s ease;
         }
         .feature-badge:hover {
-            background-color: rgba(59, 130, 246, 0.2);
+            background-color: rgba(99, 102, 241, 0.3);
             transform: scale(1.05);
         }
         .claude-point {
-            border-left: 3px solid #3b82f6;
+            border-left: 3px solid #6366f1;
             padding-left: 0.75rem;
             margin-bottom: 0.5rem;
             transition: all 0.2s ease;
         }
         .claude-point:hover {
-            background-color: rgba(59, 130, 246, 0.05);
+            background-color: rgba(99, 102, 241, 0.1);
             padding-left: 1rem;
         }
         .url-link {
-            background-color: #f3f4f6;
+            background-color: #111827;
             border-radius: 4px;
             padding: 0.5rem;
             margin-bottom: 0.75rem;
             font-family: monospace;
             font-size: 0.85rem;
-            color: #4b5563;
+            color: #d1d5db;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #374151;
             transition: all 0.2s ease;
         }
         .url-link:hover {
-            background-color: #e5e7eb;
-            border-color: #d1d5db;
+            background-color: #1f2937;
+            border-color: #4b5563;
         }
         .project-grid {
             display: grid;
@@ -152,10 +153,18 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #6b7280;
+            color: #9ca3af;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
+        }
+        a {
+            color: #a5b4fc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #818cf8;
         }
     </style>
 </head>
@@ -166,7 +175,7 @@
         <!-- 슬라이드 헤더 -->
         <div class="px-16 pt-10 pb-5">
             <h1 class="title text-5xl mb-2">팀원별 결과물 소개</h1>
-            <p class="text-gray-600 text-xl">v0 프로토타입과 Claude를 활용한 웹사이트 구축</p>
+            <p class="text-gray-400 text-xl">v0 프로토타입과 Claude를 활용한 웹사이트 구축</p>
         </div>
         
         <!-- 프로젝트 그리드 -->
@@ -180,12 +189,12 @@
                     </div>
                     <div class="p-4 flex flex-col flex-1">
                         <div class="url-link flex items-center">
-                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <i class="fas fa-link text-indigo-400 mr-2"></i>
                             <a href="https://campaign940.github.io/terminology" target="_blank">https://campaign940.github.io/terminology</a>
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
                             주요 특징
                         </div>
                         <div class="flex flex-wrap mb-3">
@@ -196,7 +205,7 @@
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            <i class="fas fa-robot text-indigo-400 mr-1"></i>
                             Claude 활용 포인트
                         </div>
                         <div class="flex flex-col">
@@ -217,12 +226,12 @@
                     </div>
                     <div class="p-4 flex flex-col flex-1">
                         <div class="url-link flex items-center">
-                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <i class="fas fa-link text-indigo-400 mr-2"></i>
                             <a href="https://esther-kakao.github.io/test_workshop" target="_blank">https://esther-kakao.github.io/test_workshop</a>
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
                             주요 특징
                         </div>
                         <div class="flex flex-wrap mb-3">
@@ -233,7 +242,7 @@
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            <i class="fas fa-robot text-indigo-400 mr-1"></i>
                             Claude 활용 포인트
                         </div>
                         <div class="flex flex-col">
@@ -254,12 +263,12 @@
                     </div>
                     <div class="p-4 flex flex-col flex-1">
                         <div class="url-link flex items-center">
-                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <i class="fas fa-link text-indigo-400 mr-2"></i>
                             <a href="https://ykandiepark.github.io/techterm2" target="_blank">https://ykandiepark.github.io/techterm2</a>
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
                             주요 특징
                         </div>
                         <div class="flex flex-wrap mb-3">
@@ -269,7 +278,7 @@
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            <i class="fas fa-robot text-indigo-400 mr-1"></i>
                             Claude 활용 포인트
                         </div>
                         <div class="flex flex-col">
@@ -289,12 +298,12 @@
                     </div>
                     <div class="p-4 flex flex-col flex-1">
                         <div class="url-link flex items-center">
-                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <i class="fas fa-link text-indigo-400 mr-2"></i>
                             <a href="https://vondisky.github.io/portal" target="_blank">https://vondisky.github.io/portal</a>
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
                             주요 특징
                         </div>
                         <div class="flex flex-wrap mb-3">
@@ -304,7 +313,7 @@
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            <i class="fas fa-robot text-indigo-400 mr-1"></i>
                             Claude 활용 포인트
                         </div>
                         <div class="flex flex-col">
@@ -324,12 +333,12 @@
                     </div>
                     <div class="p-4 flex flex-col flex-1">
                         <div class="url-link flex items-center">
-                            <i class="fas fa-link text-blue-500 mr-2"></i>
+                            <i class="fas fa-link text-indigo-400 mr-2"></i>
                             <a href="https://sue-cream.github.io/workshoptest" target="_blank">https://sue-cream.github.io/workshoptest</a>
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-star text-yellow-500 mr-1"></i>
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
                             주요 특징
                         </div>
                         <div class="flex flex-wrap mb-3">
@@ -339,7 +348,7 @@
                         </div>
                         
                         <div class="section-heading">
-                            <i class="fas fa-robot text-blue-500 mr-1"></i>
+                            <i class="fas fa-robot text-indigo-400 mr-1"></i>
                             Claude 활용 포인트
                         </div>
                         <div class="flex flex-col">
@@ -353,11 +362,11 @@
         
         <!-- 하단 요약 -->
         <div class="mt-auto mb-6 px-16">
-            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start">
-                <i class="fas fa-info-circle text-blue-500 text-xl mt-0.5 mr-3"></i>
+            <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 flex items-start">
+                <i class="fas fa-info-circle text-indigo-400 text-xl mt-0.5 mr-3"></i>
                 <div>
-                    <h3 class="font-semibold text-blue-800 mb-1">프로젝트 성과</h3>
-                    <p class="text-blue-700 text-sm">
+                    <h3 class="font-semibold text-indigo-300 mb-1">프로젝트 성과</h3>
+                    <p class="text-gray-300 text-sm">
                         모든 팀원이 Claude AI를 활용하여 v0 프로토타입을 확장하고, GitHub Pages를 통해 각자의 웹사이트를 성공적으로 배포했습니다.
                         팀원별로 다양한 기능과 디자인을 적용하여 창의적인 웹 서비스를 구현하였습니다.
                     </p>
@@ -367,20 +376,19 @@
         
         <!-- 네비게이션 버튼 -->
         <div class="fixed bottom-4 right-4 flex space-x-2">
-            <a href="page1.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="page1.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
                 <span>1</span>
             </a>
-            <a href="page2.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="page2.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
                 <span>2</span>
             </a>
-            <a href="page3.html" class="bg-blue-200 text-blue-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-colors shadow-lg">
+            <a href="page3.html" class="bg-gray-800 text-indigo-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-indigo-700 hover:text-white transition-colors shadow-lg">
                 <span>3</span>
             </a>
-            <a href="html4.html" class="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-white">
+            <a href="html4.html" class="bg-indigo-700 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg border-2 border-gray-700">
                 <span>4</span>
             </a>
         </div>
     </div>
 </body>
 </html>
-
