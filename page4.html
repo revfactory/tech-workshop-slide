@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데모 소개</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-accent {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #60a5fa);
+            top: 0;
+            left: 0;
+        }
+        .title {
+            background: linear-gradient(90deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .demo-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-accent {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 6px;
+        }
+        .lottery-accent {
+            background: linear-gradient(90deg, #f59e0b, #fbbf24);
+        }
+        .racing-accent {
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+        }
+        .tarot-accent {
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+        }
+        .survey-accent {
+            background: linear-gradient(90deg, #10b981, #34d399);
+        }
+        .demo-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .lottery-icon {
+            background-color: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+        .racing-icon {
+            background-color: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+        .tarot-icon {
+            background-color: rgba(139, 92, 246, 0.1);
+            color: #8b5cf6;
+        }
+        .survey-icon {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            margin-bottom: 0.5rem;
+        }
+        .link-item:hover {
+            background-color: #f3f4f6;
+            transform: translateX(5px);
+        }
+        .github-link {
+            color: #4b5563;
+        }
+        .site-link {
+            color: #2563eb;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1.5rem;
+            padding: 0 1rem;
+            height: 500px;
+        }
+        .demo-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            margin-top: 1rem;
+            color: #1f2937;
+        }
+        .play-button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #3b82f6;
+            color: white;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 0.75rem;
+            transition: all 0.2s ease;
+        }
+        .play-button:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+        .lottery-button {
+            background-color: #f59e0b;
+        }
+        .lottery-button:hover {
+            background-color: #d97706;
+        }
+        .racing-button {
+            background-color: #dc2626;
+        }
+        .racing-button:hover {
+            background-color: #b91c1c;
+        }
+        .tarot-button {
+            background-color: #8b5cf6;
+        }
+        .tarot-button:hover {
+            background-color: #7c3aed;
+        }
+        .survey-button {
+            background-color: #10b981;
+        }
+        .survey-button:hover {
+            background-color: #059669;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container flex flex-col">
+        <div class="header-accent"></div>
+        
+        <!-- 슬라이드 헤더 -->
+        <div class="px-16 pt-10 pb-5">
+            <h1 class="title text-5xl mb-2">데모 프로젝트 소개</h1>
+            <p class="text-gray-600 text-xl">AI 코드 생성을 통해 구현된 다양한 웹 애플리케이션</p>
+        </div>
+        
+        <!-- 데모 그리드 -->
+        <div class="demo-grid px-16">
+            <!-- 랜덤 추첨 게임 -->
+            <div class="demo-card p-6 flex flex-col">
+                <div class="card-accent lottery-accent"></div>
+                <div class="flex items-center mb-2">
+                    <div class="demo-icon lottery-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <div class="ml-4">
+                        <div class="demo-title">랜덤 추첨 게임</div>
+                        <div class="text-sm text-gray-500">Random Lottery Game</div>
+                    </div>
+                </div>
+                
+                <div class="mt-2 mb-3">
+                    <div class="link-item github-link">
+                        <i class="fab fa-github text-xl mr-3"></i>
+                        <a href="https://github.com/revfactory/random" target="_blank" class="text-gray-700 hover:text-black">github.com/revfactory/random</a>
+                    </div>
+                    <div class="link-item site-link">
+                        <i class="fas fa-globe text-xl mr-3"></i>
+                        <a href="https://revfactory.github.io/random" target="_blank" class="text-blue-600 hover:text-blue-800">revfactory.github.io/random</a>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 text-sm mt-auto mb-2">
+                    추첨을 통해 운을 시험해보세요! 다양한 추첨 방식으로 재미있게 당첨자를 선정할 수 있습니다.
+                </p>
+                
+                <a href="https://revfactory.github.io/random" target="_blank" class="play-button lottery-button text-center">
+                    <i class="fas fa-play mr-1"></i> 데모 실행하기
+                </a>
+            </div>
+            
+            <!-- 레이싱 게임 -->
+            <div class="demo-card p-6 flex flex-col">
+                <div class="card-accent racing-accent"></div>
+                <div class="flex items-center mb-2">
+                    <div class="demo-icon racing-icon">
+                        <i class="fas fa-flag-checkered"></i>
+                    </div>
+                    <div class="ml-4">
+                        <div class="demo-title">레이싱 게임</div>
+                        <div class="text-sm text-gray-500">Racing Game - 극적인 추격전</div>
+                    </div>
+                </div>
+                
+                <div class="mt-2 mb-3">
+                    <div class="link-item github-link">
+                        <i class="fab fa-github text-xl mr-3"></i>
+                        <a href="https://github.com/revfactory/racing" target="_blank" class="text-gray-700 hover:text-black">github.com/revfactory/racing</a>
+                    </div>
+                    <div class="link-item site-link">
+                        <i class="fas fa-globe text-xl mr-3"></i>
+                        <a href="https://revfactory.github.io/racing" target="_blank" class="text-blue-600 hover:text-blue-800">revfactory.github.io/racing</a>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 text-sm mt-auto mb-2">
+                    흥미진진한 레이싱 게임을 경험하세요! 극적인 추격전과 역전의 순간을 즐길 수 있습니다.
+                </p>
+                
+                <a href="https://revfactory.github.io/racing" target="_blank" class="play-button racing-button text-center">
+                    <i class="fas fa-play mr-1"></i> 게임 시작하기
+                </a>
+            </div>
+            
+            <!-- 타로 점 보기 -->
+            <div class="demo-card p-6 flex flex-col">
+                <div class="card-accent tarot-accent"></div>
+                <div class="flex items-center mb-2">
+                    <div class="demo-icon tarot-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="ml-4">
+                        <div class="demo-title">타로 점 보기</div>
+                        <div class="text-sm text-gray-500">Tarot Card Reading</div>
+                    </div>
+                </div>
+                
+                <div class="mt-2 mb-3">
+                    <div class="link-item github-link">
+                        <i class="fab fa-github text-xl mr-3"></i>
+                        <a href="https://github.com/revfactory/tarot" target="_blank" class="text-gray-700 hover:text-black">github.com/revfactory/tarot</a>
+                    </div>
+                    <div class="link-item site-link">
+                        <i class="fas fa-globe text-xl mr-3"></i>
+                        <a href="https://revfactory.github.io/tarot" target="_blank" class="text-blue-600 hover:text-blue-800">revfactory.github.io/tarot</a>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 text-sm mt-auto mb-2">
+                    타로 카드를 통해 미래를 엿보세요! 당신의 운명과 진로에 대한 신비로운 메시지를 받을 수 있습니다.
+                </p>
+                
+                <a href="https://revfactory.github.io/tarot" target="_blank" class="play-button tarot-button text-center">
+                    <i class="fas fa-magic mr-1"></i> 타로 보기
+                </a>
+            </div>
+            
+            <!-- 설문조사 생성기 -->
+            <div class="demo-card p-6 flex flex-col">
+                <div class="card-accent survey-accent"></div>
+                <div class="flex items-center mb-2">
+                    <div class="demo-icon survey-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="ml-4">
+                        <div class="demo-title">설문조사 생성기</div>
+                        <div class="text-sm text-gray-500">Survey Generator</div>
+                    </div>
+                </div>
+                
+                <div class="mt-2 mb-3">
+                    <div class="link-item github-link">
+                        <i class="fab fa-github text-xl mr-3"></i>
+                        <a href="https://github.com/revfactory/survey" target="_blank" class="text-gray-700 hover:text-black">github.com/revfactory/survey</a>
+                    </div>
+                    <div class="link-item site-link">
+                        <i class="fas fa-globe text-xl mr-3"></i>
+                        <a href="https://revfactory.github.io/survey" target="_blank" class="text-blue-600 hover:text-blue-800">revfactory.github.io/survey</a>
+                    </div>
+                </div>
+                
+                <p class="text-gray-600 text-sm mt-auto mb-2">
+                    쉽고 빠르게 설문조사를 만들고 공유하세요! 다양한 형태의 질문과 응답 옵션을 제공합니다.
+                </p>
+                
+                <a href="https://revfactory.github.io/survey" target="_blank" class="play-button survey-button text-center">
+                    <i class="fas fa-plus mr-1"></i> 설문 만들기
+                </a>
+            </div>
+        </div>
+        
+        <!-- 하단 요약 -->
+        <div class="mt-auto mb-8 px-16">
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-center">
+                <i class="fas fa-info-circle text-blue-500 text-xl mr-3"></i>
+                <p class="text-blue-700">
+                    위 데모 프로젝트들은 <span class="font-bold">Claude의 AI 코드 생성 능력</span>을 활용하여 개발되었습니다. 
+                    각 프로젝트의 GitHub 저장소에서 소스 코드를 확인하고, 배포된 사이트에서 직접 체험해보세요!
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
